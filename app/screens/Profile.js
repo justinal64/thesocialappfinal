@@ -44,14 +44,9 @@ export default class App extends Component {
       });
   }
 
-  removeFromDb = dbid => {
-    axios.delete(`http://localhost:5000/api/request/${dbid}`).then(
-      axios
-        .get(`http://localhost:5000/api/request/${GLOBAL.USERNAME}`)
-        .then(res => {
-          this.setState({ userData: res.data });
-        })
-    );
+  removeFromDb = post => {
+    console.log(post);
+    // axios.delete(`http://localhost:5000/api/request/${dbid}`);
   };
 
   render() {
@@ -118,19 +113,24 @@ export default class App extends Component {
             </View>
             <View>
               <List>
-                {this.state.userData.map((user, key) =>
-                  <ListItem avatar key={user.dbid}>
+                {this.state.userData.map((post, key) =>
+                  <ListItem avatar key={post.dbid}>
                     <Left>
                       <Thumbnail source={require("../img/zoey.jpg")} />
                     </Left>
                     <Body>
-                      <Text>{user.username}</Text>
+                      <Text>{post.username}</Text>
                       <Text note>
-                        {user.posts}
+                        {post.posts}
                       </Text>
                     </Body>
                     <Right>
-                      <Button transparent danger iconLeft>
+                      <Button
+                        transparent
+                        danger
+                        iconLeft
+                        onPress={() => this.removeFromDb(post)}
+                      >
                         <Icon name="trash" />
                       </Button>
                     </Right>
