@@ -66,7 +66,6 @@ export default class App extends Component {
 
   render() {
     if (this.state.userData === null) return null;
-    // const { navigate } = this.props.navigation;
     return (
       <ScrollView style={{ flex: 1, paddingVertical: 20 }}>
         <Card>
@@ -127,61 +126,3 @@ export default class App extends Component {
     );
   }
 }
-
-// <List>
-//   {this.state.userData.map((post, key) =>
-//     <ListItem avatar key={post.dbid}>
-//       <Left>
-//         <Thumbnail source={require("../img/zoey.jpg")} />
-//       </Left>
-//       <Body>
-//         <Text>{post.username}</Text>
-//         <Text note>
-//           {post.posts}
-//         </Text>
-//       </Body>
-//       <Right>
-//         <Button
-//           transparent
-//           danger
-//           iconLeft
-//           onPress={() => this.removeFromDb(post)}
-//         >
-//           <Icon name="trash" />
-//         </Button>
-//       </Right>
-//     </ListItem>
-//   )}
-// </List>
-
-// Fix username not persisting after reopening the app
-// <ScrollView style={{ flex: 1, paddingVertical: 20 }}>
-//   <View>
-//     <Text h4>Welcome {Global.USERNAME}</Text>
-//     <TextInput
-//       style={{ height: 40 }}
-//       placeholder="New Post...."
-//       onChangeText={post => this.setState({ post })}
-//     />
-//     <Button
-//       raised
-//       buttonStyle={{ backgroundColor: "red", borderRadius: 10 }}
-//       textStyle={{ textAlign: "center" }}
-//       title={`Submit`}
-//       onPress={() => this.submitToDb()}
-//     />
-//   </View>
-//   {this.state.userData.map((user, key) =>
-//     <Card key={user.dbid} title={user.username}>
-//       <Text style={{ marginBottom: 10 }}>
-//         {user.posts}
-//       </Text>
-//       <Badge
-//         onPress={() => {
-//           this.plusOne(user);
-//         }}
-//         value={user.likes}
-//       />
-//     </Card>
-//   )}
-// </ScrollView>
