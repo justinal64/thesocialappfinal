@@ -20,7 +20,8 @@ import {
   Input,
   Badge,
   ListItem,
-  List
+  List,
+  Fab
 } from "native-base";
 import axios from "axios";
 import Global from "../components/Global";
@@ -30,7 +31,8 @@ export default class App extends Component {
     super(props);
     this.state = {
       userData: [],
-      post: ""
+      post: "",
+      active: true
     };
   }
   componentDidMount() {
@@ -74,6 +76,7 @@ export default class App extends Component {
               <Title>Community Activity</Title>
             </Body>
             <Input
+              style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
               ref={component => (this._textInput = component)}
               placeholder="New Post....."
               onChangeText={post => this.setState({ post })}
