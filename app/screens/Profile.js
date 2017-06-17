@@ -141,49 +141,6 @@ export default class App extends Component {
           </Card>
         </Content>
       </Container>
-      // <ScrollView style={{ flex: 1, paddingVertical: 20 }}>
-      //   <Card>
-      //     <View
-      //       style={{
-      //         backgroundColor: "#bcbec1",
-      //         alignItems: "center",
-      //         justifyContent: "center",
-      //         width: 80,
-      //         height: 80,
-      //         borderRadius: 40,
-      //         alignSelf: "center",
-      //         marginBottom: 20
-      //       }}
-      //     >
-      //       <Text style={{ color: "white", fontSize: 28 }}>
-      //         {GLOBAL.USERNAME}
-      //       </Text>
-      //     </View>
-      //     <Button
-      //       backgroundColor="#03A9F4"
-      //       title="SIGN OUT"
-      //       onPress={() =>
-      //         onSignOut().then(() => navigation.navigate("SignedOut"))}
-      //     />
-      //   </Card>
-      //   <View>
-      //     <Text h4>Activity</Text>
-      //     {this.state.userData.map((user, key) =>
-      //       <Card key={user.dbid} title={user.username}>
-      //         <Text style={{ marginBottom: 10 }}>
-      //           {user.posts}
-      //           <Icon
-      //             raised
-      //             name="delete"
-      //             type="material-icons"
-      //             color="#f50"
-      //             onPress={() => this.removeFromDb(user.dbid)}
-      //           />
-      //         </Text>
-      //       </Card>
-      //     )}
-      //   </View>
-      // </ScrollView>
     );
   }
 }
