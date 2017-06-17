@@ -46,7 +46,7 @@ export default class App extends Component {
 
   removeFromDb = post => {
     console.log(post);
-    // axios.delete(`http://localhost:5000/api/request/${dbid}`);
+    axios.delete(`http://localhost:5000/api/request/${post.dbid}`);
   };
 
   render() {
