@@ -44,9 +44,17 @@ export default class App extends Component {
       });
   }
 
-  removeFromDb = post => {
-    console.log(post);
-    axios.delete(`http://localhost:5000/api/request/${post.dbid}`);
+  removeFromDb = removePost => {
+    // console.log(removePost);
+    var newArray = [];
+    this.state.userData.map((post, key) => {
+      if (post.dbid !== removePost.dbid) {
+        newArray.push(post);
+      }
+    });
+    this.setState({ userData: newArray });
+
+    axios.delete(`http://localhost:5000/api/request/${removePost.dbid}`);
   };
 
   render() {
