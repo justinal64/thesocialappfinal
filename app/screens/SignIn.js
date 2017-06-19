@@ -46,7 +46,10 @@ export default class App extends Component {
             </Item>
             <Item floatingLabel last>
               <Label>Password</Label>
-              <Input onChangeText={password => this.setState({ password })} />
+              <Input
+                secureTextEntry={true}
+                onChangeText={password => this.setState({ password })}
+              />
             </Item>
           </Form>
           <View

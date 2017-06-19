@@ -24,14 +24,16 @@ export default class App extends Component {
   }
   // syntax sugar if time permits
   // password.toString() === cpassword.toString() ? true : false;
-  cPassword = (password, cpassword, navigation, username) => {
+  cPassword = (password, cpassword, username, navigation) => {
+    console.log(password);
     if (
-      password.toString() === cpassword.toString() &&
-      password.toString() != ""
+      password.toString() != "" &&
+      password.toString() === cpassword.toString()
     ) {
       var user = {
         Username: username,
-        Password: password
+        Password: password,
+        cpassword: ""
       };
       registerUser(user, navigation);
     } else return false;
@@ -45,15 +47,21 @@ export default class App extends Component {
           <Form>
             <Item floatingLabel>
               <Label>Username</Label>
-              <Input />
+              <Input onChangeText={username => this.setState({ username })} />
             </Item>
             <Item floatingLabel last>
               <Label>Password</Label>
-              <Input />
+              <Input
+                secureTextEntry={true}
+                onChangeText={password => this.setState({ password })}
+              />
             </Item>
             <Item floatingLabel last>
               <Label>Confirm Password</Label>
-              <Input />
+              <Input
+                secureTextEntry={true}
+                onChangeText={cpassword => this.setState({ cpassword })}
+              />
             </Item>
           </Form>
           <View
@@ -65,21 +73,19 @@ export default class App extends Component {
               justifyContent: "center"
             }}
           >
-            <Button large rounded>
-              <Text>Signup</Text>
-            </Button>
-          </View>
-          <View
-            style={{
-              flex: 1,
-              paddingTop: 10,
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center"
-            }}
-          >
-            <Button large rounded onPress={() => navigation.navigate("SignIn")}>
-              <Text>SignIn</Text>
+            <Button
+              large
+              rounded
+              onPress={() => {
+                this.cPassword(
+                  this.state.password,
+                  this.state.cpassword,
+                  this.state.username,
+                  navigation
+                );
+              }}
+            >
+              <Text>Sign In</Text>
             </Button>
           </View>
         </Content>
@@ -87,51 +93,23 @@ export default class App extends Component {
     );
   }
 }
-
 // <View style={{ paddingVertical: 20 }}>
 //   <Card>
-//     <FormLabel>Username</FormLabel>
-//     <FormInput
-//       placeholder="Username...."
-//       onChangeText={username => this.setState({ username })}
-//     />
+//     <FormLabel>Email</FormLabel>
+//     <FormInput placeholder="Email address..." />
 //     <FormLabel>Password</FormLabel>
-//     <FormInput
-//       secureTextEntry
-//       placeholder="Password..."
-//       onChangeText={password => this.setState({ password })}
-//     />
-//     <FormLabel>Confirm Password</FormLabel>
-//     <FormInput
-//       secureTextEntry
-//       placeholder="Confirm Password..."
-//       onChangeText={cpassword => this.setState({ cpassword })}
-//     />
-//     {/*<UselessTextInputMultiline />*/}
+//     <FormInput secureTextEntry placeholder="Password..." />
+
 //     <Button
 //       buttonStyle={{ marginTop: 20 }}
 //       backgroundColor="#03A9F4"
-//       title="SIGN UP"
+//       title="SIGN IN"
 //       onPress={() => {
-//         this.cPassword(
-//           this.state.cpassword,
-//           this.state.password,
-//           navigation,
-//           this.state.username
-//         );
+//         onSignIn().then(() => navigation.navigate("SignedIn"));
 //       }}
 //     />
-//     <Button
-//       buttonStyle={{ marginTop: 20 }}
-//       backgroundColor="transparent"
-//       textStyle={{ color: "#bcbec1" }}
-//       title="Sign In"
-//       onPress={() => navigation.navigate("SignIn")}
-//     />
 //   </Card>
-// </View>
-// TO DO
-// 1. OnLoseFocus to validate password.cpassword
+// </View>;
 
 // <View>
 //   <Tile
