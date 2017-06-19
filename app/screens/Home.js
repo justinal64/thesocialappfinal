@@ -53,6 +53,19 @@ export default class App extends Component {
 
   submitToDb = () => {
     console.log(this.state.post);
+    var newArray = this.state.userData;
+    var newPost = {
+      posts: this.state.post,
+      dbid: Math.random(),
+      username: Global.USERNAME,
+      likes: 0
+    };
+
+    newArray.unshift(newPost);
+    this.setState({ userDate: newArray });
+    // var newArray = this.state.userData;
+    // this.state.userData.push(newPost);
+    // this.setState({ userData: newArray });
     axios.post("http://localhost:5000/api/request", {
       Username: Global.USERNAME,
       Posts: this.state.post

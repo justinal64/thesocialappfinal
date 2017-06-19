@@ -17,8 +17,7 @@ import {
   View,
   H2,
   ListItem,
-  List,
-  ListView
+  List
 } from "native-base";
 import { onSignIn, auth, registerUser } from "../auth";
 import axios from "axios";
@@ -34,10 +33,6 @@ export default class App extends Component {
       company: "",
       posts: ""
     };
-  }
-
-  componentDidReceiveProps() {
-    console.log("componentDidReceiveProps Triggered!!");
   }
 
   componentDidMount() {
@@ -59,94 +54,92 @@ export default class App extends Component {
     const navigation = this.props.navigation;
     return (
       <Container>
-        <ListView>
-          <Header>
-            <Body>
-              <Title>Profile</Title>
-            </Body>
-          </Header>
-          <Content>
-            <Card style={{ flex: 0 }}>
-              <CardItem>
-                <Left>
-                  <Thumbnail source={require("../img/zoey.jpg")} size={50} />
-                  <Body>
-                    <Text>{GLOBAL.USERNAME}</Text>
-                    <Text note>April 15, 2016</Text>
-                  </Body>
-                </Left>
-              </CardItem>
-              <CardItem>
+        <Header>
+          <Body>
+            <Title>Profile</Title>
+          </Body>
+        </Header>
+        <Content>
+          <Card style={{ flex: 0 }}>
+            <CardItem>
+              <Left>
+                <Thumbnail source={require("../img/zoey.jpg")} size={50} />
                 <Body>
-                  <Image
-                    style={{ height: 150, width: 150 }}
-                    resizeMode="contain"
-                    source={require("../img/zoey.jpg")}
-                  />
-                  <View>
-                    <Text>
-                      Company:
-                    </Text>
-                  </View>
-                  <Button transparent textStyle={{ color: "#87838B" }}>
-                    {/*<Icon name="logo-github" />*/}
-                    {/*<Text>1,926 stars</Text>*/}
-                  </Button>
+                  <Text>{GLOBAL.USERNAME}</Text>
+                  <Text note>April 15, 2016</Text>
                 </Body>
-              </CardItem>
-              <View
-                style={{
-                  flex: 1,
-                  paddingTop: 2,
-                  paddingBottom: 2,
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "center"
-                }}
-              >
-                <Button
-                  rounded
-                  danger
-                  onPress={() =>
-                    onSignOut().then(() => navigation.navigate("SignedOut"))}
-                >
-                  <Text>Log Out</Text>
+              </Left>
+            </CardItem>
+            <CardItem>
+              <Body>
+                <Image
+                  style={{ height: 150, width: 150 }}
+                  resizeMode="contain"
+                  source={require("../img/zoey.jpg")}
+                />
+                <View>
+                  <Text>
+                    Company:
+                  </Text>
+                </View>
+                <Button transparent textStyle={{ color: "#87838B" }}>
+                  {/*<Icon name="logo-github" />*/}
+                  {/*<Text>1,926 stars</Text>*/}
                 </Button>
-              </View>
+              </Body>
+            </CardItem>
+            <View
+              style={{
+                flex: 1,
+                paddingTop: 2,
+                paddingBottom: 2,
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center"
+              }}
+            >
+              <Button
+                rounded
+                danger
+                onPress={() =>
+                  onSignOut().then(() => navigation.navigate("SignedOut"))}
+              >
+                <Text>Log Out</Text>
+              </Button>
+            </View>
 
-              <View>
-                <H2>Activity</H2>
-              </View>
-              <View>
-                <List>
-                  {this.state.userData.map((post, key) =>
-                    <ListItem avatar key={post.dbid}>
-                      <Left>
-                        <Thumbnail source={require("../img/zoey.jpg")} />
-                      </Left>
-                      <Body>
-                        <Text>{post.username}</Text>
-                        <Text note>
-                          {post.posts}
-                        </Text>
-                      </Body>
-                      <Right>
-                        <Button
-                          transparent
-                          danger
-                          iconLeft
-                          onPress={() => this.removeFromDb(post)}
-                        >
-                          <Icon name="trash" />
-                        </Button>
-                      </Right>
-                    </ListItem>
-                  )}
-                </List>
-              </View>
-            </Card>
-          </Content>
-        </ListView>
+            <View>
+              <H2>Activity</H2>
+            </View>
+            <View>
+              <List>
+                {this.state.userData.map((post, key) =>
+                  <ListItem avatar key={post.dbid}>
+                    <Left>
+                      <Thumbnail source={require("../img/zoey.jpg")} />
+                    </Left>
+                    <Body>
+                      <Text>{post.username}</Text>
+                      <Text note>
+                        {post.posts}
+                      </Text>
+                    </Body>
+                    <Right>
+                      <Button
+                        transparent
+                        danger
+                        iconLeft
+                        onPress={() => this.removeFromDb(post)}
+                      >
+                        <Icon name="trash" />
+                      </Button>
+                    </Right>
+                  </ListItem>
+                )}
+              </List>
+            </View>
+          </Card>
+        </Content>
       </Container>
     );
   }
