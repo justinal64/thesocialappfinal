@@ -11,7 +11,6 @@ import {
   View
 } from "native-base";
 import { onSignIn, auth, registerUser } from "../auth";
-import axios from "axios";
 
 export default class App extends Component {
   constructor(props) {
