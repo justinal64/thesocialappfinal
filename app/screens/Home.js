@@ -39,6 +39,8 @@ export default class App extends Component {
     this.fetchAllData();
   }
 
+  componentWillReceiveProps() {}
+
   fetchAllData = () => {
     axios.get(`http://localhost:5000/api/request/getall`).then(res => {
       this.setState({ userData: res.data });
@@ -59,11 +61,14 @@ export default class App extends Component {
   };
 
   plusOne = post => {
-    post.likes++;
-    console.log(post);
-    axios
-      .put("http://localhost:5000/api/request", post)
-      .then(this.fetchAllData());
+    var newArray = this.state.userData;
+    for (var i = 0; i < this.state.userData.length; i++) {
+      if (newArray[i].dbid === post.dbid) {
+        newArray[i].likes++;
+      }
+    }
+    this.setState({ userData: newArray });
+    axios.put("http://localhost:5000/api/request", post);
   };
 
   render() {
