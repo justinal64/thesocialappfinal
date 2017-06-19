@@ -18,6 +18,7 @@ export const registerUser = (user, navigation) => {
     })
     .then(function(response) {
       console.log(response);
+      AsyncStorage.setItem(USER_KEY, "true");
       Global.USERNAME = user.Username;
       Global.DBID = response.data.dbid;
       onSignIn().then(() => navigation.navigate("SignedIn"));
@@ -36,7 +37,7 @@ export const isSignedIn = () => {
     AsyncStorage.getItem(USER_KEY)
       .then(res => {
         if (res !== null) {
-          resolve(true);
+          resolve(false); // set to true to autologin user
         } else {
           resolve(false);
         }
