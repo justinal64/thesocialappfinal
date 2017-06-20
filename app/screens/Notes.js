@@ -29,22 +29,35 @@ const images = [
   }
 ];
 
-export default () =>
-<View><Text>Notes</Text></View>
-  // <View style={{ flex: 1 }}>
-  //   <ScrollView contentContainerStyle={{ paddingVertical: 20 }}>
-  //     <Text h4>Notes Page</Text>
-  //     {images.map(({ name, image, url, key }) =>
-  //       <Card title={`CARD ${key}`} image={image} key={key}>
-  //         <Text style={{ marginBottom: 10 }}>
-  //           Photo by {name}.
-  //         </Text>
-  //         <Button
-  //           backgroundColor="#03A9F4"
-  //           title="VIEW NOW"
-  //           onPress={() => Linking.openURL(url)}
-  //         />
-  //       </Card>
-  //     )}
-  //   </ScrollView>
-  // </View>;
+export default () => <View><Text>Notes</Text></View>;
+// <View style={{ flex: 1 }}>
+//   <ScrollView contentContainerStyle={{ paddingVertical: 20 }}>
+//     <Text h4>Notes Page</Text>
+//     {images.map(({ name, image, url, key }) =>
+//       <Card title={`CARD ${key}`} image={image} key={key}>
+//         <Text style={{ marginBottom: 10 }}>
+//           Photo by {name}.
+//         </Text>
+//         <Button
+//           backgroundColor="#03A9F4"
+//           title="VIEW NOW"
+//           onPress={() => Linking.openURL(url)}
+//         />
+//       </Card>
+//     )}
+//   </ScrollView>
+// </View>;
+
+// <Container>
+//     <Content>
+//         <Card>
+//             <CardItem>
+//               <Body>
+//                 <Text>
+//                     //Your text here
+//                 </Text>
+//               </Body>
+//             </CardItem>
+//         </Card>
+//     </Content>
+// </Container>

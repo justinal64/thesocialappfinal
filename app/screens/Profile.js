@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image } from "react-native";
+import { Image, StyleSheet } from "react-native";
 import {
   Container,
   Content,
@@ -23,6 +23,7 @@ import { onSignIn, auth, registerUser } from "../auth";
 import axios from "axios";
 import GLOBAL from "../components/Global";
 import { onSignOut } from "../auth";
+import FitImage from "react-native-fit-image";
 
 export default class App extends Component {
   constructor(props) {
@@ -68,33 +69,31 @@ export default class App extends Component {
           </Body>
         </Header>
         <Content>
-          <Card style={{ flex: 0 }}>
+          <Card style={{ flex: 1 }}>
             <CardItem>
-              <Left>
-                <Thumbnail source={require("../img/zoey.jpg")} size={50} />
-                <Body>
-                  <Text>{GLOBAL.USERNAME}</Text>
-                  <Text note>April 15, 2016</Text>
-                </Body>
-              </Left>
-            </CardItem>
-            <CardItem>
-              <Body>
-                <Image
-                  style={{ height: 150, width: 150 }}
-                  resizeMode="contain"
-                  source={require("../img/zoey.jpg")}
+              <View style={{ flex: 1, alignItems: "stretch" }}>
+                <FitImage
+                  source={{
+                    uri:
+                      "https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/18424252_10212092773210138_4371118282508991436_n.jpg?oh=628cf44962e98018b725a92da2468a41&oe=59C63DC7"
+                  }}
+                  style={styles.fitImage}
                 />
-                <View>
-                  <Text>
-                    Company:
+                <View
+                  style={{
+                    flex: 1,
+                    paddingTop: 2,
+                    paddingBottom: 2,
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "center"
+                  }}
+                >
+                  <Text h3>
+                    Company: World Outreach Church
                   </Text>
                 </View>
-                <Button transparent textStyle={{ color: "#87838B" }}>
-                  {/*<Icon name="logo-github" />*/}
-                  {/*<Text>1,926 stars</Text>*/}
-                </Button>
-              </Body>
+              </View>
             </CardItem>
             <View
               style={{
@@ -116,7 +115,16 @@ export default class App extends Component {
               </Button>
             </View>
 
-            <View>
+            <View
+              style={{
+                flex: 1,
+                paddingTop: 2,
+                paddingBottom: 2,
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center"
+              }}
+            >
               <H2>Activity</H2>
             </View>
             <View>
@@ -124,7 +132,12 @@ export default class App extends Component {
                 {this.state.userData.map((post, key) =>
                   <ListItem avatar key={post.dbid}>
                     <Left>
-                      <Thumbnail source={require("../img/zoey.jpg")} />
+                      <Thumbnail
+                        source={{
+                          uri:
+                            "https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/18424252_10212092773210138_4371118282508991436_n.jpg?oh=628cf44962e98018b725a92da2468a41&oe=59C63DC7"
+                        }}
+                      />
                     </Left>
                     <Body>
                       <Text>{post.username}</Text>
@@ -152,3 +165,12 @@ export default class App extends Component {
     );
   }
 }
+var styles = StyleSheet.create({
+  fitImage: {
+    borderRadius: 20
+  },
+  fitImageWithSize: {
+    height: 100,
+    width: 30
+  }
+});
