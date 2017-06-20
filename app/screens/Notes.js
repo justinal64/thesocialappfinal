@@ -11,7 +11,9 @@ import {
   Title,
   View,
   Input,
-  Button
+  Button,
+  Right,
+  Icon
 } from "native-base";
 import axios from "axios";
 import Global from "../components/Global";
@@ -61,15 +63,17 @@ export default class App extends Component {
     this.clearText();
   };
 
-  plusOne = post => {
-    var newArray = this.state.userData;
-    for (var i = 0; i < this.state.userData.length; i++) {
-      if (newArray[i].dbid === post.dbid) {
-        newArray[i].likes++;
+  removeFromDb = removeNote => {
+    console.log(removeNote);
+    var newArray = [];
+    this.state.userNotes.map((note, key) => {
+      if (note.dbid !== removeNote.dbid) {
+        newArray.push(note);
       }
-    }
-    this.setState({ userData: newArray });
-    axios.put("http://localhost:5000/api/request", post);
+    });
+    this.setState({ userNotes: newArray });
+
+    axios.delete(`http://localhost:5000/api/notes/${removeNote.dbid}`);
   };
 
   render() {
@@ -102,7 +106,7 @@ export default class App extends Component {
               >
                 <Text>Submit</Text>
               </Button>
-              {/*</View>*/}
+
             </View>
           </Card>
           {this.state.userNotes.map((note, key) =>
@@ -111,6 +115,16 @@ export default class App extends Component {
                 <Text>
                   {note.note}
                 </Text>
+                <Right>
+                  <Button
+                    transparent
+                    danger
+                    iconLeft
+                    onPress={() => this.removeFromDb(note)}
+                  >
+                    <Icon name="trash" />
+                  </Button>
+                </Right>
               </CardItem>
             </Card>
           )}
