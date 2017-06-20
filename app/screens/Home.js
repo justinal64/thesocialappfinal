@@ -21,7 +21,8 @@ import {
   Badge,
   ListItem,
   List,
-  Fab
+  Form,
+  Label
 } from "native-base";
 import axios from "axios";
 import Global from "../components/Global";
@@ -87,63 +88,76 @@ export default class App extends Component {
   render() {
     if (this.state.userData === null) return null;
     return (
-      <ScrollView style={{ flex: 1, paddingVertical: 20 }}>
-        <Card>
-          <View>
-            <Body>
-              <Title>Community Activity</Title>
-            </Body>
-            <Input
-              style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
-              ref={component => (this._textInput = component)}
-              placeholder="New Post....."
-              onChangeText={post => this.setState({ post })}
-            />
-            <View
-              style={{
-                flex: 1,
-                paddingTop: 4,
-                paddingBottom: 4,
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center"
-              }}
-            >
+      <Container>
+        <Header>
+          <Body>
+            <Title>Community Activity</Title>
+          </Body>
+        </Header>
+        <Content>
+          <Card>
+            <View>
+              <Input
+                style={{
+                  flex: 1,
+                  height: 40,
+                  borderColor: "gray",
+                  borderWidth: 1
+                }}
+                ref={component => (this._textInput = component)}
+                placeholder="New Post....."
+                onChangeText={post => this.setState({ post })}
+              />
+              {/*style={{
+              paddingTop: 4,
+              paddingBottom: 4,
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center"
+            }}*/}
+              {/*<View
+                style={{
+                  paddingTop: 4,
+                  paddingBottom: 4,
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >*/}
               <Button
-                small
-                bordered
+                full
                 borderedtextStyle={{ textAlign: "center" }}
                 onPress={() => this.submitToDb()}
               >
                 <Text>Submit</Text>
               </Button>
+              {/*</View>*/}
             </View>
-          </View>
-          <View>
-            <List>
-              {this.state.userData.map((post, key) =>
-                <ListItem avatar key={post.dbid}>
-                  <Left>
-                    <Thumbnail source={require("../img/zoey.jpg")} />
-                  </Left>
-                  <Body>
-                    <Text>{post.username}</Text>
-                    <Text note>
-                      {post.posts}
-                    </Text>
-                  </Body>
-                  <Right>
-                    <Button transparent onPress={() => this.plusOne(post)}>
-                      <Icon active name="thumbs-up" />
-                      <Text>{post.likes} Likes</Text>
-                    </Button>
-                  </Right>
-                </ListItem>
-              )}
-            </List>
-          </View>
-        </Card>
-      </ScrollView>
+          </Card>
+          <Body />
+          <Card>
+            {this.state.userData.map((post, key) =>
+              <ListItem avatar key={post.dbid}>
+                <Left>
+                  <Thumbnail source={require("../img/zoey.jpg")} />
+                </Left>
+                <Body>
+                  <Text>{post.username}</Text>
+                  <Text note>
+                    {post.posts}
+                  </Text>
+                </Body>
+                <Right>
+                  <Button transparent onPress={() => this.plusOne(post)}>
+                    <Icon active name="thumbs-up" />
+                    <Text>{post.likes} Likes</Text>
+                  </Button>
+                </Right>
+              </ListItem>
+            )}
+          </Card>
+        </Content>
+      </Container>
     );
   }
 }
