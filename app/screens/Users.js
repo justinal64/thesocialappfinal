@@ -20,36 +20,46 @@ import {
 import PageHeader from "../components/Header";
 import axios from "axios";
 
-const images = [
+const users = [
   {
-    image: require("../images/thumbnails/0.jpg")
+    image: require("../images/thumbnails/0.jpg"),
+    username: "Emily36"
   },
   {
-    image: require("../images/thumbnails/1.jpg")
+    image: require("../images/thumbnails/1.jpg"),
+    username: "BretTheAwesome"
   },
   {
-    image: require("../images/thumbnails/2.jpg")
+    image: require("../images/thumbnails/2.jpg"),
+    username: "Emily36"
   },
   {
-    image: require("../images/thumbnails/3.jpg")
+    image: require("../images/thumbnails/3.jpg"),
+    username: "Emily36"
   },
   {
-    image: require("../images/thumbnails/4.jpg")
+    image: require("../images/thumbnails/4.jpg"),
+    username: "Emily36"
   },
   {
-    image: require("../images/thumbnails/5.jpg")
+    image: require("../images/thumbnails/5.jpg"),
+    username: "Emily36"
   },
   {
-    image: require("../images/thumbnails/6.jpg")
+    image: require("../images/thumbnails/6.jpg"),
+    username: "Emily36"
   },
   {
-    image: require("../images/thumbnails/7.jpg")
+    image: require("../images/thumbnails/7.jpg"),
+    username: "Emily36"
   },
   {
-    image: require("../images/thumbnails/8.jpg")
+    image: require("../images/thumbnails/8.jpg"),
+    username: "Emily36"
   },
   {
-    image: require("../images/thumbnails/9.jpg")
+    image: require("../images/thumbnails/9.jpg"),
+    username: "Emily36"
   }
 ];
 
@@ -57,12 +67,6 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = { userData: [] };
-  }
-  componentDidMount() {
-    axios.get(`https://jsonplaceholder.typicode.com/users`).then(res => {
-      this.setState({ userData: res.data });
-      console.log("this.state.userData = ", this.state.userData);
-    });
   }
 
   friendRequest = () => {
@@ -82,13 +86,14 @@ export default class App extends Component {
           <Card>
             <View>
               <List style={{ borderBottomWidth: 0 }}>
-                {this.state.userData.map((user, key) =>
+                {/*username not displaying correctly*/}
+                {users.map((user, key) =>
                   <ListItem key={key} avatar style={{ borderBottomWidth: 0 }}>
                     <Left>
-                      <Thumbnail source={images[key].image} />
+                      <Thumbnail source={user.image} />
                     </Left>
                     <Body style={{ borderBottomWidth: 0 }}>
-                      <Title><Text>{user.username}</Text></Title>
+                      <Text>{user.username}</Text>
                     </Body>
                     <Right style={{ borderBottomWidth: 0 }}>
                       {/*<Text note>Friend Request</Text>*/}
