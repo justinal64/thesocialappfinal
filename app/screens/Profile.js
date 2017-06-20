@@ -38,7 +38,7 @@ export default class App extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:5000/api/request/${GLOBAL.USERNAME}`)
+      .get(`https://8b53c997.ngrok.io/api/request/${GLOBAL.USERNAME}`)
       .then(res => {
         console.log("res = ", res);
         this.setState({ userData: res.data });
@@ -55,7 +55,7 @@ export default class App extends Component {
     });
     this.setState({ userData: newArray });
 
-    axios.delete(`http://localhost:5000/api/request/${removePost.dbid}`);
+    axios.delete(`https://8b53c997.ngrok.io/api/request/${removePost.dbid}`);
   };
 
   render() {

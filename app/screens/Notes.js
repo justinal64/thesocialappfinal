@@ -35,7 +35,7 @@ export default class App extends Component {
 
   fetchAllData = () => {
     axios
-      .get(`http://localhost:5000/api/notes/${Global.USERNAME}`)
+      .get(`https://8b53c997.ngrok.io/api/notes/${Global.USERNAME}`)
       .then(res => {
         this.setState({ userNotes: res.data });
       });
@@ -56,7 +56,7 @@ export default class App extends Component {
 
     newArray.unshift(newNote);
     this.setState({ userNotes: newArray });
-    axios.post("http://localhost:5000/api/notes", {
+    axios.post("https://8b53c997.ngrok.io/api/notes", {
       Username: Global.USERNAME,
       note: this.state.note
     });
@@ -73,7 +73,7 @@ export default class App extends Component {
     });
     this.setState({ userNotes: newArray });
 
-    axios.delete(`http://localhost:5000/api/notes/${removeNote.dbid}`);
+    axios.delete(`https://8b53c997.ngrok.io/api/notes/${removeNote.dbid}`);
   };
 
   render() {
