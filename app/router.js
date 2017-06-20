@@ -39,17 +39,17 @@ export const SignedIn = TabNavigator(
       navigationOptions: {
         tabBarLabel: "Users",
         tabBarIcon: ({ tintColor }) =>
-          <FontAwesome name="user" size={30} color={tintColor} />
+          <FontAwesome name="users" size={30} color={tintColor} />
       }
     },
-    // Notes: {
-    //   screen: Notes,
-    //   navigationOptions: {
-    //     tabBarLabel: "Notes",
-    //     tabBarIcon: ({ tintColor }) =>
-    //       <FontAwesome name="user" size={30} color={tintColor} />
-    //   }
-    // },
+    Notes: {
+      screen: Notes,
+      navigationOptions: {
+        tabBarLabel: "Notes",
+        tabBarIcon: ({ tintColor }) =>
+          <FontAwesome name="sticky-note-o" size={30} color={tintColor} />
+      }
+    },
     Profile: {
       screen: Profile,
       navigationOptions: {
@@ -58,10 +58,10 @@ export const SignedIn = TabNavigator(
           <FontAwesome name="user" size={30} color={tintColor} />
       }
     }
-  },
-  {
-    lazy: true
   }
+  // {
+  //   lazy: true
+  // }
 );
 
 export const createRootNavigator = (signedIn = false) => {
