@@ -31,35 +31,35 @@ const users = [
   },
   {
     image: require("../images/thumbnails/2.jpg"),
-    username: "Emily36"
+    username: "Johnny"
   },
   {
     image: require("../images/thumbnails/3.jpg"),
-    username: "Emily36"
+    username: "SuperWomen"
   },
   {
     image: require("../images/thumbnails/4.jpg"),
-    username: "Emily36"
+    username: "WonderWomen"
   },
   {
     image: require("../images/thumbnails/5.jpg"),
-    username: "Emily36"
+    username: "Zoey"
   },
   {
     image: require("../images/thumbnails/6.jpg"),
-    username: "Emily36"
+    username: "Michael"
   },
   {
     image: require("../images/thumbnails/7.jpg"),
-    username: "Emily36"
+    username: "Owen"
   },
   {
     image: require("../images/thumbnails/8.jpg"),
-    username: "Emily36"
+    username: "Andrea"
   },
   {
     image: require("../images/thumbnails/9.jpg"),
-    username: "Emily36"
+    username: "Jennifer"
   }
 ];
 
@@ -91,10 +91,9 @@ export default class App extends Component {
                   <ListItem key={key} avatar style={{ borderBottomWidth: 0 }}>
                     <Left>
                       <Thumbnail source={user.image} />
-                    </Left>
-                    <Body style={{ borderBottomWidth: 0 }}>
                       <Text>{user.username}</Text>
-                    </Body>
+                    </Left>
+                    <Body />
                     <Right style={{ borderBottomWidth: 0 }}>
                       {/*<Text note>Friend Request</Text>*/}
                       <Button
