@@ -75,7 +75,7 @@ export default class App extends Component {
         <Content>
           <Card>
             <Body>
-              <Title>Community Activity</Title>
+              <Title>Users</Title>
             </Body>
             <View>
               <List style={{ borderBottomWidth: 0 }}>
