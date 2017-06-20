@@ -58,10 +58,10 @@ export const SignedIn = TabNavigator(
           <FontAwesome name="user" size={30} color={tintColor} />
       }
     }
-  },
-  {
-    lazy: true
   }
+  // {
+  //   lazy: true
+  // }
 );
 
 export const createRootNavigator = (signedIn = false) => {
