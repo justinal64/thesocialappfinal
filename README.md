@@ -77,9 +77,9 @@ and finally the profile page is where you can edit your personal information and
 
 ## Built With
 
-* [React Native](https://facebook.github.io/react-native/docs/getting-started.html) - Mobile Framework Used
-* [NativeBase](https://nativebase.io/) - UI Comonents Used
-* [Random User Data](https://randomuser.me/) - Random User Data Used
+* [React Native](https://facebook.github.io/react-native/docs/getting-started.html) - Mobile Framework
+* [NativeBase](https://nativebase.io/) - UI Comonents
+* [Random User Data](https://randomuser.me/) - Random User Data
 
 
 ## Author
