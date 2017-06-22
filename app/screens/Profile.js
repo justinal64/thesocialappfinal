@@ -40,13 +40,11 @@ export default class App extends Component {
     axios
       .get(`https://a85a0d38.ngrok.io/api/request/${GLOBAL.USERNAME}`)
       .then(res => {
-        console.log("res = ", res);
         this.setState({ userData: res.data });
       });
   }
 
   removeFromDb = removePost => {
-    // console.log(removePost);
     var newArray = [];
     this.state.userData.map((post, key) => {
       if (post.dbid !== removePost.dbid) {
@@ -54,7 +52,6 @@ export default class App extends Component {
       }
     });
     this.setState({ userData: newArray });
-
     axios.delete(`https://a85a0d38.ngrok.io/api/request/${removePost.dbid}`);
   };
 

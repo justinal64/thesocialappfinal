@@ -22,12 +22,6 @@ export default class App extends React.Component {
       .catch(err => alert("An error occurred"));
   }
 
-  // componentWillMount() {
-  //   isSignedIn()
-  //     .then(res => this.setState({ signedIn: res, checkedSignIn: true }))
-  //     .catch(err => alert("An error occurred"));
-  // }
-
   render() {
     const { checkedSignIn, signedIn } = this.state;
 

@@ -21,10 +21,7 @@ export default class App extends Component {
       cpassword: ""
     };
   }
-  // syntax sugar if time permits
-  // password.toString() === cpassword.toString() ? true : false;
   cPassword = (password, cpassword, username, navigation) => {
-    console.log(password);
     if (
       password.toString() != "" &&
       password.toString() === cpassword.toString()
@@ -92,29 +89,3 @@ export default class App extends Component {
     );
   }
 }
-// <View style={{ paddingVertical: 20 }}>
-//   <Card>
-//     <FormLabel>Email</FormLabel>
-//     <FormInput placeholder="Email address..." />
-//     <FormLabel>Password</FormLabel>
-//     <FormInput secureTextEntry placeholder="Password..." />
-
-//     <Button
-//       buttonStyle={{ marginTop: 20 }}
-//       backgroundColor="#03A9F4"
-//       title="SIGN IN"
-//       onPress={() => {
-//         onSignIn().then(() => navigation.navigate("SignedIn"));
-//       }}
-//     />
-//   </Card>
-// </View>;
-
-// <View>
-//   <Tile
-//     imageSrc={{ require: zoey }}
-//     title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores dolore exercitationem"
-//     featured
-//     caption="Some Caption Text"
-//   />
-// </View>
