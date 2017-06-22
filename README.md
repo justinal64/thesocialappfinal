@@ -47,7 +47,7 @@ mongod
 Your terminal should look similar to this. 
 ![Mongo Started](./app/images/screenshots/mongostarted.png)
 
-Now you are ready to launch your application. In a seperate tab on your terminal cd into the root directory of the project and run the following command. 
+Now you are ready to launch your application. In a seperate tab on your terminal cd into the root directory of the project and run the one of the following command. 
 ```
 npm run ios
 ```
@@ -56,14 +56,23 @@ or
 npm run android
 ```
 depending on which emulator you want to run the app on. You should see a screen like this. 
+<br />
 ![Login Screen](./app/images/screenshots/login.png)
+<br />
 Click "Sign Up" and create a new user. Once you have done that you will automatically be logged into the app. 
+<br />
 ![Community Activity](./app/images/screenshots/communityactivity.png)
+<br />
 The next tab is where you would add friends. 
+<br />
 ![Users](./app/images/screenshots/users.png)
+<br />
 The next is where you would keep and delete notes. 
+<br />
 ![Notes](./app/images/screenshots/notes.png)
+<br />
 and finally the profile page is where you can edit your personal information and delete posts you have created. 
+<br />
 ![Profile](./app/images/screenshots/profile.png)
 
 ## Built With
