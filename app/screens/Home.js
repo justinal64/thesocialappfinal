@@ -43,7 +43,7 @@ export default class App extends Component {
   componentWillReceiveProps() {}
 
   fetchAllData = () => {
-    axios.get(`https://8b53c997.ngrok.io/api/request/getall`).then(res => {
+    axios.get(`https://a85a0d38.ngrok.io/api/request/getall`).then(res => {
       this.setState({ userData: res.data });
     });
   };
@@ -67,7 +67,7 @@ export default class App extends Component {
     // var newArray = this.state.userData;
     // this.state.userData.push(newPost);
     // this.setState({ userData: newArray });
-    axios.post("https://8b53c997.ngrok.io/api/request", {
+    axios.post("https://a85a0d38.ngrok.io/api/request", {
       Username: Global.USERNAME,
       Posts: this.state.post
     });
@@ -82,7 +82,7 @@ export default class App extends Component {
       }
     }
     this.setState({ userData: newArray });
-    axios.put("https://8b53c997.ngrok.io/api/request", post);
+    axios.put("https://a85a0d38.ngrok.io/api/request", post);
   };
 
   render() {

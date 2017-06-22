@@ -12,7 +12,7 @@ export const auth = (email, password) => {
 export const registerUser = (user, navigation) => {
   console.log("user = ", user);
   axios
-    .post("https://8b53c997.ngrok.io/api/account", {
+    .post("https://a85a0d38.ngrok.io/api/account", {
       Username: user.Username,
       Password: user.Password
     })
