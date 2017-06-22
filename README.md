@@ -77,8 +77,10 @@ and finally the profile page is where you can edit your personal information and
 
 ## Built With
 
-* [Asp.Net Core](https://docs.microsoft.com/en-us/aspnet/core/) - The web framework used
-* [MongoDB](https://www.mongodb.com/) - Database Used
+* [React Native](https://facebook.github.io/react-native/docs/getting-started.html) - Mobile Framework Used
+* [NativeBase](https://nativebase.io/) - UI Comonents Used
+* [Random User Data](https://randomuser.me/) - Random User Data Used
+
 
 ## Author
 
