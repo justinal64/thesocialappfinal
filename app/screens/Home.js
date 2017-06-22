@@ -128,7 +128,7 @@ export default class App extends Component {
             </View>
           </Card>
           <Body />
-          <Card>
+          <Card style={{ borderBottomWidth: 0 }}>
             {this.state.userData.map((post, key) =>
               <ListItem avatar key={post.dbid}>
                 <Left>
@@ -138,16 +138,18 @@ export default class App extends Component {
                     }
                   />
                 </Left>
-                <Body>
+                <Body style={{ borderBottomWidth: 0 }}>
                   <Text>{post.username}</Text>
                   <Text note>
                     {post.posts}
                   </Text>
                 </Body>
-                <Right>
+                <Right style={{ borderBottomWidth: 0 }}>
                   <Button transparent onPress={() => this.plusOne(post)}>
                     <Icon active name="thumbs-up" />
-                    <Text>{post.likes} Likes</Text>
+                    <Text style={{ borderBottomWidth: 0 }}>
+                      {post.likes} Likes
+                    </Text>
                   </Button>
                 </Right>
               </ListItem>
