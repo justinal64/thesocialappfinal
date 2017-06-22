@@ -36,22 +36,17 @@ Before you can properly run this app in an emulator or on your device you will n
 
 ### Installing
 
-Now that you have installed all the Prerequisites it's time to see if it all worked. Open your project in VS Code and either click Ctrl+ F5 or Debug->Start Debugging. This will start your server. After a few seconds a blank webpage should appear in your browser like this. 
+Now that you have installed all the Prerequisites it's time to start your mongo database.   
+```
+cd ~/
+```
+next type 
+```
+mongod
+```
+Your terminal should look similar to this. 
 <br />
-![Localhost](./img/screenshots/localhost.png)
-<br />
-If the port is different from 5000 please use the port listed on your screen. For my examples I will be using 5000. 
-
-Open postman and configure it to look like the screenshot below.  
-
-![Postman Get Request](./img/screenshots/postmanget.png)
-
-<br />
-
-If everything is working correctly you should see results like this. 
-<br />
-
-![Postman GetAll Results](./img/screenshots/Postmangetallresults.png)
+![Mongo Started](./app/images/screenshots/mongostarted.png)
 
 
 ## Built With
