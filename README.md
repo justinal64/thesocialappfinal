@@ -58,6 +58,14 @@ npm run android
 depending on which emulator you want to run the app on. You should see a screen like this. 
 ![Login Screen](./app/images/screenshots/login.png)
 Click "Sign Up" and create a new user. Once you have done that you will automatically be logged into the app. 
+![Community Activity](./app/images/screenshots/communityactivity.png)
+The next tab is where you would add friends. 
+![Users](./app/images/screenshots/users.png)
+The next is where you would keep and delete notes. 
+![Notes](./app/images/screenshots/notes.png)
+and finally the profile page is where you can edit your personal information and delete posts you have created. 
+![Profile](./app/images/screenshots/profile.png)
+
 ## Built With
 
 * [Asp.Net Core](https://docs.microsoft.com/en-us/aspnet/core/) - The web framework used
