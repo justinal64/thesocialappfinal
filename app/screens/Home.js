@@ -27,6 +27,19 @@ import {
 import axios from "axios";
 import Global from "../components/Global";
 
+var randomImg = [
+  require("../images/thumbnails/0.jpg"),
+  require("../images/thumbnails/1.jpg"),
+  require("../images/thumbnails/2.jpg"),
+  require("../images/thumbnails/3.jpg"),
+  require("../images/thumbnails/4.jpg"),
+  require("../images/thumbnails/5.jpg"),
+  require("../images/thumbnails/6.jpg"),
+  require("../images/thumbnails/7.jpg"),
+  require("../images/thumbnails/8.jpg"),
+  require("../images/thumbnails/9.jpg")
+];
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -119,7 +132,11 @@ export default class App extends Component {
             {this.state.userData.map((post, key) =>
               <ListItem avatar key={post.dbid}>
                 <Left>
-                  <Thumbnail source={require("../img/zoey.jpg")} />
+                  <Thumbnail
+                    source={
+                      randomImg[Math.floor(Math.random() * randomImg.length)]
+                    }
+                  />
                 </Left>
                 <Body>
                   <Text>{post.username}</Text>
