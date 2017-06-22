@@ -45,10 +45,19 @@ next type
 mongod
 ```
 Your terminal should look similar to this. 
-<br />
 ![Mongo Started](./app/images/screenshots/mongostarted.png)
 
-
+Now you are ready to launch your application. In a seperate tab on your terminal cd into the root directory of the project and run the following command. 
+```
+npm run ios
+```
+or
+```
+npm run android
+```
+depending on which emulator you want to run the app on. You should see a screen like this. 
+![Login Screen](./app/images/screenshots/login.png)
+Click "Sign Up" and create a new user. Once you have done that you will automatically be logged into the app. 
 ## Built With
 
 * [Asp.Net Core](https://docs.microsoft.com/en-us/aspnet/core/) - The web framework used
