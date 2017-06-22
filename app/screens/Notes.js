@@ -46,7 +46,6 @@ export default class App extends Component {
   };
 
   submitToDb = () => {
-    console.log(this.state.note);
     var newArray = this.state.userNotes;
     var newNote = {
       note: this.state.note,
@@ -64,7 +63,6 @@ export default class App extends Component {
   };
 
   removeFromDb = removeNote => {
-    console.log(removeNote);
     var newArray = [];
     this.state.userNotes.map((note, key) => {
       if (note.dbid !== removeNote.dbid) {

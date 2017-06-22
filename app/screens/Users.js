@@ -69,9 +69,6 @@ export default class App extends Component {
     this.state = { userData: [] };
   }
 
-  friendRequest = () => {
-    console.log("Friend Request Sent!!");
-  };
   render() {
     if (this.state.userData === null) return null;
     const { navigate } = this.props.navigation;
@@ -86,7 +83,6 @@ export default class App extends Component {
           <Card>
             <View>
               <List style={{ borderBottomWidth: 0 }}>
-                {/*username not displaying correctly*/}
                 {users.map((user, key) =>
                   <ListItem key={key} avatar style={{ borderBottomWidth: 0 }}>
                     <Left>
@@ -95,7 +91,6 @@ export default class App extends Component {
                     </Left>
                     <Body />
                     <Right style={{ borderBottomWidth: 0 }}>
-                      {/*<Text note>Friend Request</Text>*/}
                       <Button
                         transparent
                         onPress={() =>
@@ -119,45 +114,3 @@ export default class App extends Component {
     );
   }
 }
-
-// <Container style={{ flex: 1, paddingVertical: 20 }}>
-//   <Content>
-//     <Card>
-//       <Body>
-//         <Title>Users</Title>
-//       </Body>
-//       <View>
-//         <List style={{ borderBottomWidth: 0 }}>
-//           {this.state.userData.map((user, key) =>
-//             <ListItem key={key} avatar style={{ borderBottomWidth: 0 }}>
-//               <Left>
-//                 <Thumbnail source={images[key].image} />
-//               </Left>
-//               <Body style={{ borderBottomWidth: 0 }}>
-//                 <Text>{user.username}</Text>
-//                 {/*<Text note>
-//               Company: World Outreach Church
-//             </Text>*/}
-//               </Body>
-//               <Right style={{ borderBottomWidth: 0 }}>
-//                 {/*<Text note>Friend Request</Text>*/}
-//                 <Button
-//                   transparent
-//                   onPress={() =>
-//                     Toast.show({
-//                       supportedOrientations: ["portrait", "landscape"],
-//                       text: "Friend Request Sent",
-//                       position: "bottom",
-//                       buttonText: "Okay"
-//                     })}
-//                 >
-//                   <Text>Friend Request</Text>
-//                 </Button>
-//               </Right>
-//             </ListItem>
-//           )}
-//         </List>
-//       </View>
-//     </Card>
-//   </Content>
-// </Container>

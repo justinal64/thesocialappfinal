@@ -53,7 +53,6 @@ export default class App extends Component {
   };
 
   submitToDb = () => {
-    console.log(this.state.post);
     var newArray = this.state.userData;
     var newPost = {
       posts: this.state.post,
@@ -64,9 +63,6 @@ export default class App extends Component {
 
     newArray.unshift(newPost);
     this.setState({ userDate: newArray });
-    // var newArray = this.state.userData;
-    // this.state.userData.push(newPost);
-    // this.setState({ userData: newArray });
     axios.post("https://a85a0d38.ngrok.io/api/request", {
       Username: Global.USERNAME,
       Posts: this.state.post
@@ -108,22 +104,6 @@ export default class App extends Component {
                 placeholder="New Post....."
                 onChangeText={post => this.setState({ post })}
               />
-              {/*style={{
-              paddingTop: 4,
-              paddingBottom: 4,
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center"
-            }}*/}
-              {/*<View
-                style={{
-                  paddingTop: 4,
-                  paddingBottom: 4,
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "center"
-                }}
-              >*/}
               <Button
                 full
                 borderedtextStyle={{ textAlign: "center" }}
