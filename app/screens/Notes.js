@@ -8,7 +8,6 @@ import {
   Text,
   Body,
   Header,
-  Title,
   View,
   Input,
   Button,
@@ -17,6 +16,7 @@ import {
 } from "native-base";
 import axios from "axios";
 import Global from "../components/Global";
+import PageTitle from "../components/PageTitle";
 
 export default class App extends Component {
   constructor(props) {
@@ -80,7 +80,7 @@ export default class App extends Component {
       <Container>
         <Header>
           <Body>
-            <Title>Notes</Title>
+            <PageTitle title="Notes" />
           </Body>
         </Header>
         <Content>
