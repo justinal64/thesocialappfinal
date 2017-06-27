@@ -4,7 +4,6 @@ import {
   Container,
   Content,
   Card,
-  CardItem,
   Thumbnail,
   Text,
   Button,
@@ -12,17 +11,9 @@ import {
   Left,
   Right,
   Body,
-  Header,
-  Title,
   View,
-  H2,
-  Item,
   Input,
-  Badge,
-  ListItem,
-  List,
-  Form,
-  Label
+  ListItem
 } from "native-base";
 import axios from "axios";
 import Global from "../components/Global";
@@ -103,11 +94,7 @@ export default class App extends Component {
     if (this.state.userData === null) return null;
     return (
       <Container>
-        <Header>
-          <Body>
-            <PageTitle title="Community Activity" />
-          </Body>
-        </Header>
+        <PageTitle title="Community Activity" />
         <Content>
           <Card>
             <View>

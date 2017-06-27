@@ -7,7 +7,6 @@ import {
   CardItem,
   Text,
   Body,
-  Header,
   View,
   Input,
   Button,
@@ -78,11 +77,7 @@ export default class App extends Component {
     if (this.state.userData === null) return null;
     return (
       <Container>
-        <Header>
-          <Body>
-            <PageTitle title="Notes" />
-          </Body>
-        </Header>
+        <PageTitle title="Notes" />
         <Content>
           <Card>
             <View>
