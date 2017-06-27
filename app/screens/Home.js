@@ -103,11 +103,7 @@ export default class App extends Component {
     if (this.state.userData === null) return null;
     return (
       <Container>
-        <Header>
-          <Body>
-            <PageTitle title="Community Activity" />
-          </Body>
-        </Header>
+        <PageTitle title="Community Activity" />
         <Content>
           <Card>
             <View>

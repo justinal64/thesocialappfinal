@@ -60,11 +60,7 @@ export default class App extends Component {
     const navigation = this.props.navigation;
     return (
       <Container>
-        <Header>
-          <Body>
-            <PageTitle title="Profile" />
-          </Body>
-        </Header>
+        <PageTitle title="Profile" />
         <Content>
           <Card style={{ flex: 1 }}>
             <CardItem>

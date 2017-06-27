@@ -75,11 +75,7 @@ export default class App extends Component {
     const { navigate } = this.props.navigation;
     return (
       <Container>
-        <Header>
-          <Body>
-            <PageTitle title="Users" />
-          </Body>
-        </Header>
+        <PageTitle title="Users" />
         <Content>
           <Card>
             <View>
