@@ -17,8 +17,9 @@ import {
   Toast,
   Header
 } from "native-base";
-import PageHeader from "../components/Header";
+import PageHeader from "../components/PageTitle";
 import axios from "axios";
+import PageTitle from "../components/PageTitle";
 
 const users = [
   {
@@ -76,7 +77,7 @@ export default class App extends Component {
       <Container>
         <Header>
           <Body>
-            <Title>Users</Title>
+            <PageTitle title="Users" />
           </Body>
         </Header>
         <Content>

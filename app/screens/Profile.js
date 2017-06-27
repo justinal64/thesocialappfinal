@@ -13,7 +13,6 @@ import {
   Right,
   Body,
   Header,
-  Title,
   View,
   H2,
   ListItem,
@@ -24,6 +23,7 @@ import axios from "axios";
 import GLOBAL from "../components/Global";
 import { onSignOut } from "../auth";
 import FitImage from "react-native-fit-image";
+import PageTitle from "../components/PageTitle";
 
 export default class App extends Component {
   constructor(props) {
@@ -62,7 +62,7 @@ export default class App extends Component {
       <Container>
         <Header>
           <Body>
-            <Title>Profile</Title>
+            <PageTitle title="Profile" />
           </Body>
         </Header>
         <Content>

@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, Header, View } from "react-native";
 
-class PageHeader extends React.Component {
+export default class Post extends React.Component {
   render() {
-    return <p>The logged in user is:</p>;
+    return <Text>This is a test</Text>;
   }
 }

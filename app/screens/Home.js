@@ -26,6 +26,7 @@ import {
 } from "native-base";
 import axios from "axios";
 import Global from "../components/Global";
+import PageTitle from "../components/PageTitle";
 
 var avatar = [
   require("../images/thumbnails/0.jpg"),
@@ -104,7 +105,7 @@ export default class App extends Component {
       <Container>
         <Header>
           <Body>
-            <Title>Community Activity</Title>
+            <PageTitle title="Community Activity" />
           </Body>
         </Header>
         <Content>
