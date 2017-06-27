@@ -27,7 +27,7 @@ import {
 import axios from "axios";
 import Global from "../components/Global";
 
-var randomImg = [
+var avatar = [
   require("../images/thumbnails/0.jpg"),
   require("../images/thumbnails/1.jpg"),
   require("../images/thumbnails/2.jpg"),
@@ -37,7 +37,13 @@ var randomImg = [
   require("../images/thumbnails/6.jpg"),
   require("../images/thumbnails/7.jpg"),
   require("../images/thumbnails/8.jpg"),
-  require("../images/thumbnails/9.jpg")
+  require("../images/thumbnails/9.jpg"),
+  require("../images/thumbnails/10.jpg"),
+  require("../images/thumbnails/11.jpg"),
+  require("../images/thumbnails/12.jpg"),
+  require("../images/thumbnails/13.jpg"),
+  require("../images/thumbnails/14.jpg"),
+  require("../images/thumbnails/15.jpg")
 ];
 
 export default class App extends Component {
@@ -53,10 +59,8 @@ export default class App extends Component {
     this.fetchAllData();
   }
 
-  componentWillReceiveProps() {}
-
   fetchAllData = () => {
-    axios.get(`https://a85a0d38.ngrok.io/api/request/getall`).then(res => {
+    axios.get(`http://localhost:5000/api/request/getall`).then(res => {
       this.setState({ userData: res.data });
     });
   };
@@ -76,7 +80,7 @@ export default class App extends Component {
 
     newArray.unshift(newPost);
     this.setState({ userDate: newArray });
-    axios.post("https://a85a0d38.ngrok.io/api/request", {
+    axios.post("http://localhost:5000/api/request", {
       Username: Global.USERNAME,
       Posts: this.state.post
     });
@@ -91,7 +95,7 @@ export default class App extends Component {
       }
     }
     this.setState({ userData: newArray });
-    axios.put("https://a85a0d38.ngrok.io/api/request", post);
+    axios.put("http://localhost:5000/api/request", post);
   };
 
   render() {
@@ -132,11 +136,7 @@ export default class App extends Component {
             {this.state.userData.map((post, key) =>
               <ListItem avatar key={post.dbid}>
                 <Left>
-                  <Thumbnail
-                    source={
-                      randomImg[Math.floor(Math.random() * randomImg.length)]
-                    }
-                  />
+                  <Thumbnail source={avatar[key]} />
                 </Left>
                 <Body style={{ borderBottomWidth: 0 }}>
                   <Text>{post.username}</Text>
