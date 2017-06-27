@@ -6,16 +6,13 @@ import {
   ListItem,
   Text,
   Card,
-  Title,
   Body,
   Left,
   Right,
   Thumbnail,
   Button,
-  Icon,
   View,
-  Toast,
-  Header
+  Toast
 } from "native-base";
 import PageHeader from "../components/PageTitle";
 import axios from "axios";

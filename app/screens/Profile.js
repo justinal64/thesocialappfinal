@@ -12,7 +12,6 @@ import {
   Left,
   Right,
   Body,
-  Header,
   View,
   H2,
   ListItem,

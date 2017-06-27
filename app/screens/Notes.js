@@ -7,7 +7,6 @@ import {
   CardItem,
   Text,
   Body,
-  Header,
   View,
   Input,
   Button,
